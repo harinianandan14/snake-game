@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game 3D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- 3D Heptagonal decorative elements -->
+        <div class="heptagon heptagon-top-left"></div>
+        <div class="heptagon heptagon-top-right"></div>
+        <div class="heptagon heptagon-bottom-left"></div>
+        <div class="heptagon heptagon-bottom-right"></div>
+        
+        <!-- Game Header -->
+        <div class="game-header">
+            <h1>Snake Game 3D</h1>
+            <div class="score-container">
+                <div class="score-display">
+                    <span class="score-label">Score</span>
+                    <span class="score-value" id="scoreValue">0</span>
+                </div>
+                <div class="high-score-display">
+                    <span class="high-score-label">High Score</span>
+                    <span class="high-score-value" id="highScoreValue">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Canvas Container -->
+        <div class="canvas-container">
+            <canvas id="gameCanvas" width="600" height="600"></canvas>
+            
+            <!-- Start Screen - visible by default -->
+            <div class="overlay-screen" id="startScreen">
+                <div class="screen-content">
+                    <h2>Snake Game 3D</h2>
+                    <div class="instructions">
+                        <p>🐍 Use arrow keys to control your snake</p>
+                        <p>🍎 Eat red apples to grow and score points</p>
+                        <p>⚠️ Avoid hitting walls or your own tail</p>
+                    </div>
+                    <button class="btn btn--primary btn--lg" id="startButton">Start Game</button>
+                    <p class="space-hint">or press SPACE</p>
+                </div>
+            </div>
+
+            <!-- Game Over Screen - hidden by default -->
+            <div class="overlay-screen screen-hidden" id="gameOverScreen">
+                <div class="screen-content">
+                    <h2>Game Over!</h2>
+                    <div class="final-score">
+                        <p>Your Score: <span id="finalScore">0</span></p>
+                    </div>
+                    <button class="btn btn--primary btn--lg" id="restartButton">Play Again</button>
+                    <p class="space-hint">or press SPACE</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Info -->
+        <div class="controls-info">
+            <div class="control-group">
+                <span class="control-key">↑↓←→</span>
+                <span class="control-desc">Move Snake</span>
+            </div>
+            <div class="control-group">
+                <span class="control-key">Space</span>
+                <span class="control-desc">Start/Restart</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
